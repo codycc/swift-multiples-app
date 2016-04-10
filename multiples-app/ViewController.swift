@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     //Properties 
-    var maxAmount = 100
+    var maxAmount = 300
     var currentAmount = 0
     var multipleToAddBy = 0
     @IBOutlet weak var logoImg: UIImageView!
@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     @IBAction func onAddTapped(sender: UIButton!) {
         currentAmount += multipleToAddBy
         multiplesOutput.text = "\(currentAmount) + \(multipleToAddBy) = \(currentAmount + multipleToAddBy)"
+        if isGameOver() {
+            restartGame()
+        }
     }
     
     @IBAction func onGameStart(sender: UIButton!) {
@@ -39,6 +42,24 @@ class ViewController: UIViewController {
             multiplesOutput.text = "\(currentAmount)"
         }
         
+    }
+    
+    func restartGame() {
+        logoImg.hidden = false
+        multiplesInput.hidden = false
+        playBtn.hidden = false
+        
+        multiplesOutput.hidden = true
+        addBtn.hidden = true
+        
+    }
+    
+    func isGameOver() -> Bool {
+        if currentAmount >= maxAmount {
+            return true
+        } else {
+            return false
+        }
     }
 
 
