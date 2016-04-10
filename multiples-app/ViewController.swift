@@ -9,15 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    //Properties 
+    var maxAmount = 100
+    var currentAmount = 0
+    var multipleToAddBy = 0
+    @IBOutlet weak var logoImg: UIImageView!
+    @IBOutlet weak var multiplesInput: UITextField!
+    @IBOutlet weak var playBtn: UIButton!
+    
+    @IBOutlet weak var multiplesOutput: UILabel!
+    @IBOutlet weak var addBtn: UIButton!
+    
+    @IBAction func onAddTapped(sender: UIButton!) {
+        currentAmount += multipleToAddBy
+        multiplesOutput.text = "\(currentAmount) + \(multipleToAddBy) = \(currentAmount + multipleToAddBy)"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func onGameStart(sender: UIButton!) {
+        if multiplesInput.text != nil && multiplesInput.text != "" {
+            logoImg.hidden = true
+            multiplesInput.hidden = true
+            playBtn.hidden = true
+            
+            multiplesOutput.hidden = false
+            addBtn.hidden = false
+            multipleToAddBy =  Int(multiplesInput.text!)!
+            currentAmount  = 0
+            
+            multiplesOutput.text = "\(currentAmount)"
+        }
+        
     }
 
 

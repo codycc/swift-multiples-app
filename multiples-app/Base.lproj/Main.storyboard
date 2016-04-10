@@ -34,6 +34,9 @@
                                     <constraint firstAttribute="width" constant="148" id="JoA-Ah-li2"/>
                                 </constraints>
                                 <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="onGameStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pHr-rG-7cR"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What multiple to add by? " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-pI-nIY" userLabel="multipleTxtInput">
                                 <rect key="frame" x="186" y="360" width="228" height="30"/>
@@ -51,6 +54,9 @@
                                     <constraint firstAttribute="width" constant="176" id="SIx-At-5F4"/>
                                 </constraints>
                                 <state key="normal" image="add"/>
+                                <connections>
+                                    <action selector="onAddTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PCg-ct-Rma"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5 + 5 = 15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxX-f5-mKr" userLabel="resultLbl">
                                 <rect key="frame" x="198" y="148" width="205" height="62"/>
@@ -79,6 +85,13 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JCl-bX-9L0" secondAttribute="bottom" constant="31" id="zyz-ZU-8Zz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addBtn" destination="yCK-8s-kfn" id="I9Y-uD-slI"/>
+                        <outlet property="logoImg" destination="dm4-4E-dbS" id="C9c-cF-bue"/>
+                        <outlet property="multiplesInput" destination="Sfg-pI-nIY" id="Cbd-fN-LN3"/>
+                        <outlet property="multiplesOutput" destination="gxX-f5-mKr" id="17t-qv-xHW"/>
+                        <outlet property="playBtn" destination="JCl-bX-9L0" id="bPK-zH-BWI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
